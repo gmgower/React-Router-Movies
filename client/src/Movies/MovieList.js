@@ -4,6 +4,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
+import MovieCard from './MovieCard' 
+
+
 const MovieList = props => {
   const [movies, setMovies] = useState([])
 
