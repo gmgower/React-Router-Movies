@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 const Movie = (props) => {
-  const [movie, setMovie] = useState({});
- 
+  const [movie, setMovie] = useState(null); // empty object is truthy add null for falsey  
+  console.log("Movie", props)
+  console.log(props.match.params.id)
+
+  
+  const id = props.match.params.id;
+
   useEffect(() => {
-    const id = 1;
+    // * S7 Match method link id from the URL
+    // * const id = props.match.params.id;  // move out of useEffect function due to scope
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
@@ -18,7 +25,8 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
+        // * S8 Add id to dependency array
+  },[id]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
@@ -43,6 +51,7 @@ const Movie = (props) => {
         </div>
         <h3>Actors</h3>
 
+        {/* // * S6 stars was undefined set useState to null to execute the if (!movie) to true  */} 
         {stars.map(star => (
           <div key={star} className="movie-star">
             {star}

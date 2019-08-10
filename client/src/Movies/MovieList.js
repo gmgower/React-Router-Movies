@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// * S5 import Link
+import { Link } from 'react-router-dom';
+
 
 const MovieList = props => {
   const [movies, setMovies] = useState([])
+
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -30,6 +34,8 @@ const MovieList = props => {
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
+    // * S4 Warp movie card with Link. Click card will link display card.
+    <Link to={`/movies/${movie.id}`}>
     <div className="movie-card">
       <h2>{title}</h2>
       <div className="movie-director">
@@ -46,6 +52,7 @@ function MovieDetails({ movie }) {
         </div>
       ))}
     </div>
+    </Link>
   );
 }
 
