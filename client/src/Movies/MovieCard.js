@@ -1,7 +1,8 @@
 import React from 'react';
+// import Movie from './Movie'
 
 const MovieCard = props => {
-  console.log(props)
+  console.log("MovieCard", props)
 
   const movie = props.movie;
   const { title, director, metascore, stars } = movie;
@@ -24,7 +25,8 @@ const MovieCard = props => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      
+      <div onClick={() => props.addToSavedList(movie)} className="save-button">Save</div>
     </div>
   );
         }

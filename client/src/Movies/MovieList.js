@@ -39,6 +39,7 @@ function MovieDetails({ movie }) {
   return (
     // * S4 Warp movie card with Link. Click card will link display card.
     <Link to={`/movies/${movie.id}`}>
+    {/* <MovieCard movie={movie} /> */}
     <div className="movie-card">
       <h2>{title}</h2>
       <div className="movie-director">
