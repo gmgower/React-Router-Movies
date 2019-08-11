@@ -41,7 +41,7 @@ const Movie = (props) => {
   }
 
   return (
-    <MovieCard movie={movie}  {...props}/>
+    <MovieCard movie={movie}  {...props}  />
   /* <MovieCard movie={movie} render={props => <Movie {...props} saveMovie={saveMovie} /> }  /> */
   
   )
